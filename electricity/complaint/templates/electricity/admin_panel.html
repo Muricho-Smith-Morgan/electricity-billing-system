@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">
+	<title>Admin Panel</title>
+</head>
+<body>
+	<h1 style="text-align: center;">COMPLAINTS</h1>
+</body>
+</html>
+	<table class="table table-condensed table-bordered">
+		<thead>
+			<tr class="table-secondary">
+                <th>No.</th>
+				<th>First Name</th>
+				<th>Last Name</th>
+				<th>Residence</th>
+                <th>Problem</th>
+				<th>Email</th>
+				<th>Phone Number</th>
+				<th>DATE</th>
+				<th>STATUS</th>
+				<th>Update</th>
+				<th>Delete</th>
+			</tr>
+			</thead>
+			{% for x in mymembers %}
+				<tr>
+					<td>{{forloop.counter}}</td>
+                   <td>{{ x.first_name}}</td>
+				   <td>{{ x.last_name}}</td>
+				   <td>{{ x.residence}}</td>
+				   <td>{{ x.problem}}</td>
+				   <td>{{ x.email}}</td>
+				   <td>{{ x.phone_number}}</td>
+				   <td>{{ x.date}}</td>
+				   <td>{% if x.status == "" %}Pending.{% else %}<span class="badge bg-info">{{ x.status }}</span>{% endif %}</td>
+				   <td><a href="{% url 'edit' x.id %}" class="btn btn-primary btn-sm">Update</a></td>
+				   <td><a href="{% url 'delete' x.id %}" class="btn btn-danger btn-sm">Delete <i class="bi bi-trash-fill"></i></a></td>
+				   
+				</tr>
+		    {%endfor%}
+
+			</table>
+</body>
+</html>

@@ -1,0 +1,35 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">
+	<link rel="stylesheet" href="{% static 'bootstrap.min.icons' %}">
+	<link rel="stylesheet" href="{% static 'hello.css' %}">
+	<title>annaritah</title>
+</head>
+<body>
+	<nav style="background-color:white;"> 
+		<h2 class="heading">ELECTRICITY BILLING COMPLAINT</h2>
+		<span class="bi bi-person"></span>
+		<div class="nav-links" id="navLinks">
+			<ul>
+				<li><a class="btn btn-primary" href="{% url 'hello' %}" class="active">HOME</a></li>
+				<li><a class="btn btn-primary" href="{% url 'login' %}" >MANAGER</a></li>
+				<li><a class="btn btn-primary" href="{% url 'customer_login' %}" >CUSTOMER LOGIN</a></li>
+				<li><a class="btn btn-primary" href="{% url 'hello' %}">AbOUT US</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<section class="header">
+	<div class="text-box">
+		<h1>POWER MONITORING</h1>
+	 <a href="{% url 'lodge' %}" target="_blank" class="hero-btn"> File a Report</a> 
+	</div>
+</section>
+	
+</body>
+</html>

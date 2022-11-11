@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">
+	<link rel="stylesheet" href="{% static 'hello.css' %}">
+	<title>Login</title>
+</head>
+<body>
+	<nav style="background-color:white;  "> 
+		<h2 class="heading">ELECTRICITY BILLING COMPLAINT</h2>
+		<div class="nav-links" id="navLinks">
+			<ul>
+				<li><a href="{% url 'hello' %}" >HOME</a></li>
+				<li><a href="{% url 'login' %}" class="active">LOGIN</a></li>
+				<li><a href="{% url 'hello' %}">AbOUT US</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<section class="vh-100" style="background-color: #508bfc;">
+		<div class="container py-5 h-100">
+		  <div class="row d-flex justify-content-center align-items-center h-100">
+			<div class="col-12 col-md-8 col-lg-6 col-xl-5">
+			  <div class="card shadow-2-strong" style="border-radius: 1rem;">
+				<div class="card-body p-5 text-center">
+					<form method="post"> 
+						{% csrf_token %}
+	  
+				  <h3 class="mb-5"><b>Sign in</b></h3>
+	  
+				  <div class="form-outline ">
+					<label class="form-label" for="typeEmailX-2">Username</label>
+					<input type="text" id="typeEmailX-2" name="username" class="form-control form-control-lg" />
+				  </div>
+	  
+				  <div class="form-outline ">
+					<label class="form-label" for="typePasswordX-2">Password</label>
+					<input type="password" id="typePasswordX-2" name="password" class="form-control form-control-lg" />
+				  </div>
+	  
+				  <!-- Checkbox -->
+				  <div class="form-check d-flex justify-content-start mb-4">
+					<input class="form-check-input" type="checkbox" value="" id="form1Example3" />
+					<label class="form-check-label" for="form1Example3"> Remember password </label>
+				  </div>
+	  
+				  <button class="btn btn-primary btn-lg btn-block" type="submit">Login</button>
+	  
+				</form>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	  </section>
+
+	</body>
+</html>
